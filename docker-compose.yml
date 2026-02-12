@@ -1,0 +1,13 @@
+services:
+  cliproxyapi:
+    image: ${CLI_PROXY_IMAGE:-eceasy/cli-proxy-api:latest}
+    container_name: cliproxyapi
+    restart: unless-stopped
+    ports:
+      - "${CLIPROXY_PORT:-8317}:8317"
+    environment:
+      TZ: ${TZ:-UTC}
+    volumes:
+      - ./config.generated.yaml:/CLIProxyAPI/config.yaml:ro
+      - ./auths:/root/.cli-proxy-api
+      - ./logs:/CLIProxyAPI/logs

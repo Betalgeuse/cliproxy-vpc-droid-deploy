@@ -1,0 +1,6 @@
+.env
+config.generated.yaml
+auths/*.json
+logs/*
+!logs/.gitkeep
+!auths/.gitkeep
