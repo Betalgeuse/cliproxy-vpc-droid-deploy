@@ -18,7 +18,7 @@ if [ -f "${ENV_FILE}" ]; then
   set +a
 fi
 
-: "${CLIPROXY_CLIENT_API_KEY:?CLIPROXY_CLIENT_API_KEY is required in .env}"
+CLIPROXY_CLIENT_API_KEY="${CLIPROXY_CLIENT_API_KEY:-}"
 REMOTE_MGMT_SECRET_KEY="${REMOTE_MGMT_SECRET_KEY:-}"
 
 escape_sed() {

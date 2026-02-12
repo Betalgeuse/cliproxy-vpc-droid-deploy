@@ -18,9 +18,8 @@ remote-management:
 
 auth-dir: "~/.cli-proxy-api"
 
-# Injected from .env via scripts/render-config.sh
-api-keys:
-  - "__CLIPROXY_CLIENT_API_KEY__"
+# Local-only mode: disable client API key authentication.
+api-keys: []
 
 debug: false
 logging-to-file: true
